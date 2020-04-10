@@ -7,25 +7,38 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
+    mergeNavbar: true,
 	  loadSidebar: true,
 	  subMaxLevel: 6,
-	  
+
 	  loadNavbar: true,
       name: '',
       repo: '',
-	  
+
 	 search: {
             maxAge: 86400000, // 过期时间，单位毫秒，默认一天
             noData: '找不到结果',//搜索不到结果时显示
             paths: 'auto',//自动
-            placeholder: '搜索',//搜索框提示  
+            placeholder: '搜索',//搜索框提示
             depth: 6 // 搜索标题的最大层级, 1 - 6
         },
+
+	plantuml: {
+     skin: 'classic',
+        },
+
+     // docsify-copy-code (defaults)
+     copyCode: {
+       buttonText : '点击复制',
+       errorText  : '错误',
+       successText: '复制'
+     },
 
     }
   </script>
@@ -33,6 +46,9 @@
   <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
   <!-- 引入 PHP 代码高亮插件 -->
   <script src="//unpkg.com/prismjs/components/prism-php.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-java.js"></script>
+  <script src="https://unpkg.com/docsify-copy-code@2"></script>
+  <script src="//unpkg.com/docsify-plantuml/dist/docsify-plantuml.min.js"></script>
 
 </body>
 </html>
