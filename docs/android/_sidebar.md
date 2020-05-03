@@ -2,3 +2,4 @@
 * [Activity生命周期与启动方式](/docs/android/Activity生命周期和启动方式.md)
 * [IPC机制](/docs/android/IPC机制.md)
 * [android 源码阅读](/docs/android/android源码阅读.md)
+* [消息机制](/docs/android/消息机制.md)
