@@ -51,39 +51,39 @@ Binder 的工作机制
     ```
   定义的管理Book实体的一个接口，包含 getBookList 和 addBook 两个方法。
   系统为IBookManager.aidl生产的Binder类，在 gen 目录下的IBookManager.java类。结构如下：
-   * 声明了 getBookList 和 addBook 方法，还声明了两个整型id分别标识这两个方法，用于标
-  识在 transact 过程中客户端请求的到底是哪个方法。
-   * 声明了一个内部类 Stub ，这个 Stub 就是一个Binder类，当客户端和服务端位于同一进
-  程时，方法调用不会走跨进程的 transact 。当二者位于不同进程时，方法调用需要
-  走 transact 过程，这个逻辑有 Stub 的内部代理类 Proxy 来完成。
+   * 声明了 getBookList 和 addBook 方法，还声明了两个整型id分别标识这两个方法，用于标识transact 过程中客户端请求的到底是哪个方法。
+   * 声明了一个内部类 Stub ，这个 Stub 就是一个Binder类，当客户端和服务端位于同一进程时，方法调用不会走跨进程的 transact 。当二者位于不同进程时，方法调用需要走 transact 过程，这个逻辑有 Stub 的内部代理类 Proxy 来完成。
    * 这个接口的核心实现就是它的内部类 Stub 和 Stub 的内部代理类 Proxy 。
-  ```plantuml
-  interface IBookManager{
-    List<Book> getBookList()
-    void addBook()
-  }
-  interface IInterface{
-    public IBinder asBinder();
-  }
-  class Binder{
-    public void linkToDeath(DeathRecipient recipient, int flags);
-    public boolean unlinkToDeath(DeathRecipient recipient, int flags);
-    public boolean isBinderAlive();
-  }
-  abstract IBookManager.Stub{
-    public static IBookManager asInterface(IBinder obj)
-    public IBinder asBinder();
-  }
-  abstract IBookManager.Proxy
 
-  IBookManager .u.|>IInterface
-  IBookManager.Stub .u.|> IBookManager
-  IBookManager.Stub -u-|> Binder
+```plantuml
+    interface IBookManager{
+        List<Book> getBookList()
+        void addBook()
+      }
+      interface IInterface{
+        public IBinder asBinder();
+      }
+      class Binder{
+        public void linkToDeath(DeathRecipient recipient, int flags);
+        public boolean unlinkToDeath(DeathRecipient recipient, int flags);
+        public boolean isBinderAlive();
+      }
+      abstract IBookManager.Stub{
+        public static IBookManager asInterface(IBinder obj)
+        public IBinder asBinder();
+      }
+      abstract IBookManager.Proxy
 
-  IBookManager.Proxy .u.|> IBookManager
-  IBookManager.Proxy -u-|> Binder
-  ```
+      IBookManager .u.|>IInterface
+      IBookManager.Stub .u.|> IBookManager
+      IBookManager.Stub -u-|> Binder
+
+      IBookManager.Proxy .u.|> IBookManager
+      IBookManager.Proxy -u-|> Binder
+```
+
 #### Stub和Proxy类的内部方法和定义
+
 1. DESCRIPTOR
 Binder的唯一标识，一般用Binder的类名表示。
 2. asInterface(android.os.IBinder obj)
