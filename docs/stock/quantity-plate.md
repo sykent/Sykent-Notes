@@ -11,6 +11,7 @@
 
 数据交易日 5 月 7 号的效果图，如下：
 
+
 ![](https://sykent-blog-image.oss-cn-beijing.aliyuncs.com/stock/q-5月7号效果图.png)
 ## 板块动量曲线指标
 **切换：** 板块动量曲线，图如下：
