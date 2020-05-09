@@ -3,3 +3,4 @@
 * [IPC机制](/docs/android/IPC机制.md)
 * [android 源码阅读](/docs/android/android源码阅读.md)
 * [消息机制](/docs/android/消息机制.md)
+* [View 的事件体系](/docs/android/view-event-system.md)
