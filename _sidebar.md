@@ -15,3 +15,5 @@
 * [opengl基础](/docs/opengl/opengl基础.md)
 * [禅](/docs/readbook/佛.md)
 * [动量跟踪](/docs/stock/quantity-plate.md)
+* [kotlin 基础](/docs/kotlin/basics-grammar.md)
+* [fragment](/docs/android/fragment.md)

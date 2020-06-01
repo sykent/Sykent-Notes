@@ -81,3 +81,12 @@ GLES20.glDisable(GLES20.GL_BLEND);
 
 * 渲染缓冲对象附件
 * 颜色附件(纹理)
+
+## 编码
+* MediaCodec，MediaMuxer，Surface
+* 构建 EGLDisplay，EGLContext，EGLConfig
+* 编码器，获取 Surface，转换成 EGLSurface，切换到该 EGLSurface
+* 绘制
+* EGLDisplay，EGLSurface写入时间戳
+* eglSwapBuffers，前后台数据交换一下
+* 开启编码，MediaCodec 拿出后台数据，编码，MediaMuxer 写到本地。
