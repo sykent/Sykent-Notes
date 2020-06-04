@@ -17,3 +17,4 @@
 * [动量跟踪](/docs/stock/quantity-plate.md)
 * [kotlin 基础](/docs/kotlin/basics-grammar.md)
 * [fragment](/docs/android/fragment.md)
+* [dagger](/docs/jetpack/dagger.md)
