@@ -31,3 +31,6 @@ UseObj --> InjectObj
 UseObj <.left.> DaggerComponent
 
 ```
+
+[例子](https://juejin.im/entry/5970a8175188254d1c7ab4b2)
+[例子2](https://zhuanlan.zhihu.com/p/113124369)
