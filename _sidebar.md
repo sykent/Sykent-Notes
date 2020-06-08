@@ -18,4 +18,4 @@
 * [kotlin 基础](/docs/kotlin/basics-grammar.md)
 * [fragment](/docs/android/fragment.md)
 * [dagger](/docs/jetpack/dagger.md)
-* [git](/docs/vcs/git.md)
+* [kotlin 核心编程](/docs/kotlin/kotlin核心编程.md)
