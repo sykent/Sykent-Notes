@@ -15,3 +15,4 @@
 * test: 部署测试环境 `git commit -m 'test: xx'`
 * refactor：重构（即不是新增功能，也不是修改bug的代码变动）
 * docs：文档（documentation）
+* merge：合并
