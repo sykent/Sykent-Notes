@@ -89,7 +89,28 @@ interface ApplicationComponent {
 }
 ```
 
+## 多模块动态依赖
+依赖声明
+```kotlin
+@Component(dependencies = [AppComponent::class])
+interface LoginComponent2 {
+    @Component.Builder
+    interface Builder {
 
+        fun appComponent(appComponent: AppComponent): Builder
+        fun create(): LoginComponent2
+    }
+
+    fun inject(activity: LoginActivity)
+}
+```
+使用
+```kotlin
+val appComponent = (application as DemoApplication).appComponent
+DaggerLoginComponent2.builder()
+        .appComponent(appComponent)
+        .create().inject(this)
+```
 
 [例子](https://juejin.im/entry/5970a8175188254d1c7ab4b2)
 [例子2](https://zhuanlan.zhihu.com/p/113124369)
