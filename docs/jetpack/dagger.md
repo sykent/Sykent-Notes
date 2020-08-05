@@ -39,7 +39,7 @@ UseObj <.left.> DaggerComponent
 
 * Module 直接声明变量，然后构造函数注入，Component 传入 Module
 * 通过 @Component.Builder + @BindsInstance set 方法注入，Module 的  @Provides 传入参数。
-```
+```java
     @Component.Builder
     interface Builder {
         @BindsInstance
@@ -47,6 +47,22 @@ UseObj <.left.> DaggerComponent
 
         MainComponent build();
     }
+```
+
+```java
+@Module
+public class MainModule {
+    @Provides
+    MainPresenter provideMainView(MainView mView) {
+        return new MainPresenter(mView);
+    }
+
+    @Provides
+    UsePresenter provideUserPresenter(MainPresenter presenter){
+        return new UsePresenter(presenter);
+    }
+
+}
 ```
 
 ## 子组件
@@ -111,6 +127,25 @@ DaggerLoginComponent2.builder()
         .appComponent(appComponent)
         .create().inject(this)
 ```
+
+## Android 上使用 dagger2
+
+@ContributesAndroidInjector 注解，为了返回 Android 组件，modules 为该组件提供对象。
+```
+@ContributesAndroidInjector(
+  modules = { /* modules to install into the subcomponent */ })
+```
+
+
+## 坑
+
+**一、**
+```
+A @Module may not contain both non-static
+ @Provides methods and abstract @Binds or @Multibinds declarations
+```
+如果 @Model 注解的是抽象类时 @provides 标注的必须是静态方法。
+
 
 [例子](https://juejin.im/entry/5970a8175188254d1c7ab4b2)
 [例子2](https://zhuanlan.zhihu.com/p/113124369)
