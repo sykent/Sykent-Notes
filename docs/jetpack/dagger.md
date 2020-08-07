@@ -130,12 +130,11 @@ DaggerLoginComponent2.builder()
 
 ## Android 上使用 dagger2
 
-@ContributesAndroidInjector 注解，为了返回 Android 组件，modules 为该组件提供对象。
+@ContributesAndroidInjector 注解，为了返回 Android 组件，modules 为该组件提供对象。通俗的说，是返回的对象注入到子组件里面。
 ```
 @ContributesAndroidInjector(
   modules = { /* modules to install into the subcomponent */ })
 ```
-
 
 ## 坑
 
@@ -145,6 +144,10 @@ A @Module may not contain both non-static
  @Provides methods and abstract @Binds or @Multibinds declarations
 ```
 如果 @Model 注解的是抽象类时 @provides 标注的必须是静态方法。
+
+**二、** annotationProcessor Java gradle 需要加；kapt kotlin 需要加，并启动插件 apply plugin: 'kotlin-kapt'
+
+
 
 
 [例子](https://juejin.im/entry/5970a8175188254d1c7ab4b2)
