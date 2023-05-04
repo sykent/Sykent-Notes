@@ -11,3 +11,15 @@ class FragmentTransaction
 class FragmentManager
 
 ```
+
+## 源码分析
+
+```plantuml
+class FragmentTransaction
+class BackStackRecord
+
+class FragmentManager
+class FragmentManagerImpl
+class Fragment
+class Op
+```
